@@ -1,7 +1,8 @@
-import {Component, Input, Output, EventEmitter, OnChanges} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnChanges, HostListener } from '@angular/core';
 
 import { Grid } from '../../lib/grid';
 import { DataSource } from '../../lib/data-source/data-source';
+import { TableService } from '../../services/table.service';
 
 @Component({
     selector: '[ng2-st-thead]',
@@ -22,8 +23,16 @@ export class Ng2SmartTableTheadComponent implements OnChanges {
     isHideHeader: boolean;
     isHideSubHeader: boolean;
 
-  ngOnChanges() {
+    constructor(private tableService: TableService) {
+    }
+
+    ngOnChanges() {
       this.isHideHeader = this.grid.getSetting('hideHeader');
       this.isHideSubHeader = this.grid.getSetting('hideSubHeader');
+    }
+
+    @HostListener('mousemove', ['$event'])
+    private mouseMove(event: MouseEvent) {
+      this.tableService.mouseMoveEvent$.next(event);
     }
 }
