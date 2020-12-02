@@ -19,6 +19,7 @@ import { Column } from "../../../lib/data-set/column";
         [ngClass]="column.class"
         [style.width]="column.width">
       <ng2-st-column-title [source]="source" [column]="column" (sort)="sort.emit($event)"></ng2-st-column-title>
+      <div *ngIf="isResizable" ng2-resizer class="ng2-resizer-block"></div>
     </th>
     <th ng2-st-actions-title *ngIf="showActionColumnRight" [grid]="grid"></th>
   `,
@@ -35,6 +36,7 @@ export class TheadTitlesRowComponent implements OnChanges {
   isMultiSelectVisible: boolean;
   showActionColumnLeft: boolean;
   showActionColumnRight: boolean;
+  isResizable: boolean;
 
 
   ngOnChanges() {
