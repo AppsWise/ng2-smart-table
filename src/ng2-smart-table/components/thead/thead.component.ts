@@ -2,7 +2,7 @@ import {Component, Input, Output, EventEmitter, OnChanges, HostListener } from '
 
 import { Grid } from '../../lib/grid';
 import { DataSource } from '../../lib/data-source/data-source';
-import { TableService } from '../../services/table.service';
+import { TableService } from '../../lib/services/table.service';
 
 @Component({
     selector: '[ng2-st-thead]',
@@ -32,7 +32,7 @@ export class Ng2SmartTableTheadComponent implements OnChanges {
     }
 
     @HostListener('mousemove', ['$event'])
-    private mouseMove(event: MouseEvent) {
+    public mouseMove(event: MouseEvent) {
       this.tableService.mouseMoveEvent$.next(event);
     }
 }
