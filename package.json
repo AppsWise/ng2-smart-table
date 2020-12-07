@@ -1,6 +1,7 @@
 {
   "name": "ng2-smart-table",
   "version": "1.7.2",
+  "files": ["dist/ng2-smart-table"],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,7 +15,7 @@
     "changelog": "standard-changelog -p angular",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prepare": "npm run build:lib"
+    "prepare": "npm run build:lib && cp -r ./dist/ng2-smart-table/* . && rm -rf ./dist"
   },
   "private": true,
   "dependencies": {
