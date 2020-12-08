@@ -34,7 +34,7 @@
     "e2e": "ng e2e",
     "clean:dist": "npm run rimraf -- dist",
     "changelog": "standard-changelog",
-    "prepare": "npm run build:lib && cp -r ./dist/ng2-smart-table/* . && rm -rf ./dist"
+    "prepare": "npm run build:release && cp -r ./dist/ng2-smart-table/* . && rm -rf ./dist"
   },
   "dependencies": {
     "@angular/animations": "6.0.2",

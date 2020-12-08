@@ -10,12 +10,7 @@ import { THeadModule } from './components/thead/thead.module';
 
 import { Ng2SmartTableComponent } from './ng2-smart-table.component';
 
-declare module "@angular/core" {
-  interface ModuleWithProviders<T = any> {
-    ngModule: Type<T>;
-    providers?: Provider[];
-  }
-}
+
 
 @NgModule({
   imports: [
