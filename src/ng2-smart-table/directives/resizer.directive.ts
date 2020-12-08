@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, OnDestroy, OnInit, Renderer2 } fro
 import { Subject } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 
-import { TableService } from '../services/table.service';
+import { TableService } from '../lib/services/table.service';
 
 @Directive({
   selector: '[ng2-resizer]'
